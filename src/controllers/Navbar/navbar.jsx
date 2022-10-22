@@ -1,25 +1,34 @@
 import React, { useState } from "react";
-import {Link} from "react-router-dom"
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import "./navbar.css";
+import Cookies from 'universal-cookie';
+import Axios from "axios";
+
 
 function Navbars(){ 
-    // const [showLinks, setShowLinks] = useState(false)
-    // const expand = () => {
-    //     setShowLinks(!showLinks)
-    // }
-
     const [hover1, setHover1] = useState("white")
     const [hover2, setHover2] = useState("white")
     const [hover3, setHover3] = useState("white")
     const [hover4, setHover4] = useState("white")
     const [hover5, setHover5] = useState("white")
     const [hover6, setHover6] = useState("white")
+    let logged_in = false;
+    const [profileUrl, setProfileUrl] = useState(null)
+    const [profileName, setProfileName] = useState(null)
+    const cookies = new Cookies();
+    if (cookies.get("access_token")){
+      logged_in = true;
+      Axios.post("http://127.0.0.1:5000/getdetail", {"access_token":cookies.get("access_token")})
+      .then((response)=>{
+        if(response.data.data.type === "google")
+        logged_in = true
+        setProfileUrl(response.data.data.profile_pic)
+        setProfileName(response.data.data.name)
+        setHover5("yellow")
+      })
+    }
     
     return (
         <Navbar style={{backgroundColor: "transparent"}} expand="lg">
@@ -37,13 +46,20 @@ function Navbars(){
               <Nav.Link href="#" style={{fontSize: "18px", color:hover3, fontFamily:"Raleway", fontWeight:"600"}} onMouseOver={()=>{setHover3("#790252")}} onMouseOut={()=>setHover3("white")}>
                 Attend Quiz
               </Nav.Link>
-              <Nav.Link href="#" style={{fontSize: "18px", color:hover4, fontFamily:"Raleway", fontWeight:"600"}} onMouseOver={()=>{setHover4("#790252")}} onMouseOut={()=>setHover4("white")}>
-                Log in
-              </Nav.Link>
-              <Nav.Link href="#" style={{fontSize: "18px", color:hover5, fontFamily:"Raleway", fontWeight:"600"}} onMouseOver={()=>{setHover5("#790252")}} onMouseOut={()=>setHover5("white")}>
-
+              
+                {logged_in ? null : <Nav.Link href="/login" style={{fontSize: "18px", color:hover4, fontFamily:"Raleway", fontWeight:"800"}} onMouseOver={()=>{setHover4("#790252")}} onMouseOut={()=>setHover4("white")}>
+                Login
+                </Nav.Link>}
+                {logged_in ? <Nav.Link href="/" style={{fontSize: "18px", color:hover5, fontFamily:"Raleway", fontWeight:"800"}} onMouseOver={()=>{setHover5("#790252")}} onMouseOut={()=>setHover5("white")} onClick={()=> {cookies.remove("access_token")}}>
+                Logout
+                </Nav.Link> : null}
+                {logged_in ? <img src={profileUrl} alt="" className="profile_pic"/> : <Nav.Link href="/register" style={{fontSize: "18px", color:hover5, fontFamily:"Raleway", fontWeight:"800"}} onMouseOver={()=>{setHover5("#790252")}} onMouseOut={()=>setHover5("white")}>
                 Sign Up
-              </Nav.Link>
+                </Nav.Link>}
+                
+              
+              
+              
             </Nav>
           </Navbar.Collapse>
         </Container>

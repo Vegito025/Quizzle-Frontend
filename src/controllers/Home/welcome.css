@@ -40,3 +40,23 @@
     font-size: 20px;
     font-family: "Exo 2";
 }
+.login-button2{
+    margin-left: 27.5%;
+    margin-top: 5%;
+    padding: 1% 5% 1% 5%; 
+    border: none;
+    background-color: gold;
+    font-size: 20px;
+    font-family: "Exo 2";
+}
+.login-button2:hover{
+    background-color: #FAC213;
+    color: white;
+}
+.register-button2{
+    padding: 1% 5% 1% 5%; 
+    border: none;
+    margin-left: 10%;
+    font-size: 20px;
+    font-family: "Exo 2";
+}
