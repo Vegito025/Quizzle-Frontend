@@ -1,0 +1,31 @@
+.pins h2{
+    text-align: center;
+    padding: 8% 10% 0% 10%;
+    font-family: "Raleway";
+    color: white;
+    font-weight: bold;
+}
+.h31{
+    text-align: center;
+    padding: 5% 10% 0% 10%;
+    font-family: "Raleway";
+    color: gold;
+    font-weight: bold;
+}
+.h32{
+    text-align: center;
+    padding: 3% 10% 0% 10%;
+    font-family: "Raleway";
+    color: gold;
+    font-weight: bold;
+}
+.pins button{
+    border: none;
+    border-radius: 10px;
+    background-color: gold;
+    color: white;
+    padding: 2% 3% 2% 3%;
+    font-family:"Raleway";
+    font-weight: bold;
+    margin: 5% 0% 0% 75%;
+}

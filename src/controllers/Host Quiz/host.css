@@ -1,0 +1,107 @@
+.quiz-box{
+    background-color: white;
+    width: 98%;
+    margin: 1% 1% 1% 1%;
+    border-radius: 10px;
+    padding-bottom: 90%;
+}
+.quiz-head{
+    text-align: center;
+    padding-top: 2%;
+    font-family: "Raleway";
+    font-weight: bold;
+}
+.quiz-questions h1{
+    margin: 2% 2% 0% 2%;
+    font-family: "Raleway";
+    color: white;
+    font-weight: bold;
+    padding-left: 1%;
+    padding-top: 1%;
+
+}
+.quiz-questions{
+    background-image: linear-gradient(to right, #0a63d8, #0ea1f7);
+    margin: 2%;
+    border-radius: 10px;
+    padding-bottom: 1%;
+}
+.quiz-options{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 2% 2% 0% 2%;
+}
+.quiz-options button{
+    margin: 0% 2% 2% 2%;
+    border: none;
+    padding: 2% 3%;
+    font-family: "Raleway";
+    font-weight:bold;
+    color: white;
+    background-color: gold;
+    border-radius: 10px;
+    font-size: x-large;
+}
+.quiz-options button:hover{
+    background-color: rgb(255, 125, 147);
+}
+.quiz-question-input{
+    background-image: linear-gradient(to right, #0a63d8, #0ea1f7);
+    margin: 2%;
+    border-radius: 10px;
+    padding-bottom: 1%;
+}
+.quiz-input{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 2%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+    font-size: 32px;
+    font-family: "raleway";
+    color: white;
+}
+.quiz-option-2{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 2% 2% 0% 6%;
+}
+.quiz-indi-option{
+    background-color: transparent;
+    border: none;
+    margin: 5% 2% 0% 0%;
+    font-family: "raleway";
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 32px;
+}
+.quiz-option-2 button{
+    margin: 6% 2% 2% 0%;
+    border: none;
+    padding: 2% 3%;
+    font-family: "Raleway";
+    font-weight:bold;
+    color: white;
+    background-color: gold;
+    border-radius: 10px;
+    font-size: x-large;
+}
+.quiz-indi-option:focus{
+    outline: none;
+}
+.quiz-input:focus{
+    outline: none;
+}
+.submit-button{
+    margin: 0% 2% 2% 2%;
+    border: none;
+    padding: 2% 3%;
+    font-family: "Raleway";
+    font-weight:bold;
+    color: white;
+    background-color: gold;
+    border-radius: 10px;
+    font-size: x-large;
+    width: 96%;
+}

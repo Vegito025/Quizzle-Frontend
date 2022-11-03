@@ -16,7 +16,6 @@ function Navbars(){
     const [hover6, setHover6] = useState("white")
     let logged_in = false;
     const [profileUrl, setProfileUrl] = useState(null)
-    const [profileName, setProfileName] = useState(null)
     const cookies = new Cookies();
     if (cookies.get("access_token")){
       logged_in = true;
@@ -24,8 +23,12 @@ function Navbars(){
       .then((response)=>{
         if(response.data.data.type === "google")
         logged_in = true
-        setProfileUrl(response.data.data.profile_pic)
-        setProfileName(response.data.data.name)
+        if(response.data.data.profile_pic === null){
+          setProfileUrl("/user-profile-icon-free-vector.png")
+        }
+        else{
+          setProfileUrl(response.data.data.profile_pic)
+        }
         setHover5("yellow")
       })
     }
@@ -45,6 +48,9 @@ function Navbars(){
               <Nav.Link href="#action2" style={{fontSize: "18px", color:hover2, fontFamily:"Raleway", fontWeight:"600"}} onMouseOver={()=>{setHover2("#790252")}} onMouseOut={()=>setHover2("white")}>Host Quiz</Nav.Link>
               <Nav.Link href="#" style={{fontSize: "18px", color:hover3, fontFamily:"Raleway", fontWeight:"600"}} onMouseOver={()=>{setHover3("#790252")}} onMouseOut={()=>setHover3("white")}>
                 Attend Quiz
+              </Nav.Link>
+              <Nav.Link href="/getpin" style={{fontSize: "18px", color:hover3, fontFamily:"Raleway", fontWeight:"600"}} onMouseOver={()=>{setHover3("#790252")}} onMouseOut={()=>setHover3("white")}>
+                See Results
               </Nav.Link>
               
                 {logged_in ? null : <Nav.Link href="/login" style={{fontSize: "18px", color:hover4, fontFamily:"Raleway", fontWeight:"800"}} onMouseOver={()=>{setHover4("#790252")}} onMouseOut={()=>setHover4("white")}>

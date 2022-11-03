@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Cookies from "universal-cookie"
 import { useNavigate } from "react-router-dom";
 import Axios from "axios"
-import "./attend.css"
 
-function Attend(){
+
+function GetPin(){
     const cookies = new Cookies()
     let navigate = useNavigate()
     const [ppin, setPpin] = useState(null)
@@ -27,7 +27,7 @@ function Attend(){
             if(response.data.success === true){
                 cookies.set("ppin", ppin, {path: "/"})
                 cookies.set("qpin", qpin, {path: "/"})
-                navigate(`/quiz/${ppin}/${qpin}`)
+                navigate(`/results/${ppin}/${qpin}`)
             }
         })
     }
@@ -42,4 +42,4 @@ function Attend(){
     )
 }
 
-export default Attend;
+export default GetPin;

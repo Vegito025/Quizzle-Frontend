@@ -1,0 +1,37 @@
+.instro-head{
+    color: yellow;
+    font-family: "Raleway";
+    padding-top: 5%;
+    font-weight: bold;
+    padding-left: 10%;
+}
+.instro-list{
+    padding-left: 17%;
+    font-size: 22px;
+    color: white;
+    font-family: "Raleway";
+    padding-top: 2%;
+    font-weight: bold;
+}
+.instro-ilist{
+    padding-top: 1%;
+}
+.instro-para{
+    padding-left: 12%;
+    font-family: "Raleway";
+    color: yellow;
+    font-weight: bold;
+    font-size: 22px;
+    padding-top: 1%;
+}
+.instro-button{
+    padding: 1% 4% 1% 4%;
+    border-radius: 10px;
+    border: none;
+    background-image: linear-gradient(to right, yellow, gold);
+    font-family: "Raleway";
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 2%;
+    margin-left: 80%;
+}
